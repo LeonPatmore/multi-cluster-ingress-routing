@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-cluster-1
+spec:
+  type: ExternalName
+  externalName: proxy.cluster-1.helloworld.dev.nexmo.cloud
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

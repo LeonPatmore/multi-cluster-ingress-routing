@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworld-pineapple
+spec:
+  type: ClusterIP
+  selector:
+    app: helloworld-pineapple
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

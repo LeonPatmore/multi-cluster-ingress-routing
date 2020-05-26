@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: helloworld-pineapple-cluster
+  annotations:
+    kubernetes.io/ingress.class: ingress-controller-public-nginx
+    kubernetes.io/service-upstream: "true"
+spec:
+  rules:
+    - host: pineapple.cluster-1.helloworld.dev.nexmo.cloud
+      http:
+        paths:
+          - backend:
+              serviceName: helloworld-pineapple
+              servicePort: 80
